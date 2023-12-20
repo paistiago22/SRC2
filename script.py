@@ -60,3 +60,5 @@ bpublic=data.apply(lambda x: ipaddress.IPv4Address(x['dst_ip']) not in NET,axis=
 
 #Geolocalization of public destination adddress
 cc=data[bpublic]['dst_ip'].apply(lambda y:gi.country_code_by_addr(y)).to_frame(name='cc')
+
+print(cc)['cc'].value_counts().to_string()
